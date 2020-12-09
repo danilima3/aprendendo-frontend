@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Primeira Aula - CSS</title>
+  <style>
+    * {
+      line-height: 1.5rem;
+    }
+    .is-block {
+      display: block;
+    }
+    .code-syntax-hightlight {
+      max-width: 80ch;
+      margin: 0;
+      padding: 2px 5px;
+      font-weight: 700;
+      background: #555555;
+      border-radius: 3px;
+    }
+    .code-syntax-hightlight__attr {
+      color: #00aa00;
+    }
+    .code-syntax-hightlight__tag {
+      color: #d768b3;
+    }
+    .code-syntax-hightlight__tag-content {
+      color: #ffffff;
+    }
+    .text-indent-1 {
+		  text-indent: 15px
+		}
+    .text-indent-2 {
+		  text-indent: 30px
+		}
+    .text-indent-3 {
+		  text-indent: 45px
+		}
+    .text-indent-4 {
+		  text-indent: 60px
+		}
+    .text-indent-5 {
+		  text-indent: 75px
+		}
+  </style>
+</head>
+<body>
+  <!-- adicionar novo header -->
+  <main>
+    <header>
+      <h1>Primeira aula de CSS</h1>
+      <ul>
+        <li><a href="/">Início</a></li>
+        <li><a href="/css">CSS</a></li>
+        <li>Primeira aula de CSS</li>
+      </ul>
+    </header>
+    <article>
+      <h2>Anotações relevantes</h2>
+      <section>
+        <h3>Descrição:</h3>
+        <p>
+          O CSS é responsável pela estilização da página, de modo a permitir inclur, cores, bordas, efeitos, transparências, transições, translações e muito mais aos elementos HTML com a intenção de se fazer um site moderno e bonito.
+        </p>    
+      </section>
+      <section>
+        <h3>Formas de incluir estilos</h3>
+        <p>
+          Há três maneiras principais de incluir estilo nos elementos HTML, mas nessa aula vimos somente os dois primeiros:
+        <ul>
+          <li>
+            <strong>estilo em linha (inline style):</strong> Se trata de incluir em uma tag HTML o atributo <code class="code-syntax-hightlight code-syntax-hightlight__attr">style</code> e como valor as propriedades css <code class="code-syntax-hightlight code-syntax-hightlight__tag-content">display: flex; background: lightgreen;</code>, por exemplo. Acontece que essa é uma forma que não é comumente usada em web sites, por diversos motivos relacionados à facilidade de manutenção do código, como por exemplo, caso precisasse mudar a cor de determinados elementos em um site completamente estilizado, precisaria procurar cada um desses elementos no HTML e alterá-los com a nova cor e isso precisaria se repetir com todos os outros atributos e elementos. Os maiores problemas causados aqui são repetição de código, o que ocasiona mais tempo para alterar uma simples estilização e aumenta a probabilidade de causar um erro na renderização, além do fato de perder determinadas funcionalidades do css (aprenderemos mais sobre elas em aulas futuras). 
+            <br/>
+            <strong>Exemplo de uma estilização em linha</strong>
+            <br />
+            <code class="code-syntax-hightlight code-syntax-hightlight__tag is-block">
+              &lt;header <code class="code-syntax-hightlight code-syntax-hightlight__attr">style="<code class="code-syntax-hightlight code-syntax-hightlight__tag-content">display: flex; background: lightgreen;</code>"</code>&gt;
+              <code class="code-syntax-hightlight code-syntax-hightlight__tag-content is-block text-indent-1">conteúdo do header</code>
+              <code class="code-syntax-hightlight code-syntax-hightlight__tag is-block">&lt;/header&gt;</code>
+            </code>
+            <br/>
+          </li>
+          <li>
+            <strong>estilo incorporado (embeded style):</strong> Nessa forma é possível estilizar a página através da inclusão da tag <code class="code-syntax-hightlight code-syntax-hightlight__tag">&lt;style&gt;</code>, que é por convenção incluído dentro da tag <code class="code-syntax-hightlight code-syntax-hightlight__tag">&lt;head&gt;</code>. Dentro dessa tag é possível selecionar o elemento passando o nome da tag ou algum atributo nela existente, como classes, id, data attributo ou qualquer outro. Isso resolve parte do problema de manutenção de código, que é causado no inline style, mas o não resolve forma completa.
+            <br />
+            <strong>Exemplo de estilização incorporada</strong>
+            <br />
+            <code class="code-syntax-hightlight is-block">
+              <span class="code-syntax-hightlight__tag is-block">&lt;style&gt;</span>
+                <span class="code-syntax-hightlight__attr is-block text-indent-1">seletor-do-elemento {</span>
+                  <span class="code-syntax-hightlight__tag-content is-block text-indent-2">propriedade-css: valor da propriedade;</span>
+                <span class="code-syntax-hightlight__attr is-block text-indent-1">}</span>
+              <span class="code-syntax-hightlight__tag is-block">&lt;/style&gt;</span>
+            </code>
+          </li>
+          <li>
+            <strong>estilo importado (external style):</strong> Aprenderemos esse em uma aula futura.
+          </li>
+        </ul>
+        </section>
+        <section>
+          <h3>Como selecionar elementos no css</h3>
+          <p>
+            Como mencionado acima, na parte do estilo incorporado, é possível selecionar o elemento HTML para estilizá-lo através do nome da tag ou através de algum atributo do mesmo. Essa só é considerada concluída quando abre e fecha chaves logo após o nome da tag ou do atributo e dentro das chaves é onde se inclui as propriedades css, para estilizar o elemento selecionado.
+            <br />
+            <strong>Selecionando através do nome da tag:</strong>  Para selecionar desta forma, precisa apenas incluir o nome da tag seguido de chaves, conforme exemplo abaixo
+            <br />
+            <code class="code-syntax-hightlight is-block">
+              <span class="code-syntax-hightlight__tag is-block">&lt;style&gt;</span>
+                <span class="code-syntax-hightlight__attr is-block text-indent-1">header {</span>
+                  <span class="code-syntax-hightlight__tag-content is-block text-indent-2">background: lightgreen;</span>
+                  <span class="code-syntax-hightlight__tag-content is-block text-indent-2">display: flex;</span>
+                <span class="code-syntax-hightlight__attr is-block text-indent-1">}</span>
+              <span class="code-syntax-hightlight__tag is-block">&lt;/style&gt;</span>
+            </code>
+            <strong>Selecionando através do atributo class da tag:</strong> Para selecionar pelo atributo class da tag, precisa apenas incluir um ponto "." seguido pelo nome da class, como "cabecalho" por exemplo, e por fim abrindo e fechando chaves. Desta forma poderíamos substituir o nome da tag do exemplo anterior pela seleção da classe:
+            <br /> 
+            <code class="code-syntax-hightlight is-block">
+              <span class="code-syntax-hightlight__tag is-block">&lt;style&gt;</span>
+                <span class="code-syntax-hightlight__attr is-block text-indent-1">.cabecalho {</span>
+                  <span class="code-syntax-hightlight__tag-content is-block text-indent-2">background: lightgreen;</span>
+                  <span class="code-syntax-hightlight__tag-content is-block text-indent-2">display: flex;</span>
+                <span class="code-syntax-hightlight__attr is-block text-indent-1">}</span>
+              <span class="code-syntax-hightlight__tag is-block">&lt;/style&gt;</span>
+            </code>
+          </p>
+        </section>
+        <section>
+          <h3>Aplicação das regras de estilo</h3>
+          <p>
+            Para a estilização escrita no css ser aplicada ela segue algumas regras primordias do css e, nessa aula, vimos algumas delas, como exemplificado na lista abaixo. Considere que a ordem definida na lista abaixo vai do mais forte para o mais fraco, ou seja, os primeiros itens tem prioridade para aplicação de suas regras.
+          </p>
+          <ol>
+            <li>
+              <strong>Expressão "!important"</strong>
+              <br />
+              Se trata de incluir a expressão "!important" logo após o valor de uma propriedade, desta forma por exemplo: <code class="code-syntax-hightlight code-syntax-hightlight__tag-content">color: red !important</code>. No entanto, cabe ressaltar, que o uso dessa expressão na declaração de qualquer propriedade é considerado má prática e não deve ser usada. Apenas foi mencionada na aula para tomar conhecimento e ter como opção <strong>caso não haja outra forma para que a regra de estilo desejada seja aplicada</strong>, porém é indicado sempre evitar o uso e se possível corrigir tudo o que está impedindo de definir a propriedade sem essa expressão.
+            </li>
+            <li>
+              <strong>Style inline</strong>
+              <br />
+              Qualquer estilo incluído diretamente no atributo style do elemento terá mais força do que qualquer seletor ou nível de força de seletor. Essa forma de selecionar o elemento também é considerada má prática se incluída diretamente no HTML, pelo fato de prejudicar a manutenção do código como já mencionado anteriormente.
+            </li>
+            <li>
+              <strong>Nível de força do seletor</strong>
+              <br />
+              O nível de força da seleção é definido pela quantidade de aninhamentos que um elemento pode ter, considerando tanto o nome da tag quanto o nome do atributo. Por exemplo, se é feita a seleção do mesmo elemento duas vezes, com a mesma quantidade de aninhamentos, eles terão a mesma força. Caso selecione o mesmo elemento onde em uma forma de seleção tenha pelo menos um aninhamento a mais que na outra, a seleção com mais aninhamentos terá mais força, mesmo que seja definida antes, exemplos:
+              <br />
+              <strong>Elemento selecionado com mesmo nívevl de seleção</strong>
+              <br />
+              <code class="code-syntax-hightlight is-block">
+                <span class="code-syntax-hightlight__tag is-block">&lt;style&gt;</span>
+                  <span class="code-syntax-hightlight__attr is-block text-indent-1">header {</span>
+                    <span class="code-syntax-hightlight__tag-content is-block text-indent-2">background: lightgreen;</span>
+                    <span class="code-syntax-hightlight__tag-content is-block text-indent-2">color: blue;</span>
+                  <span class="code-syntax-hightlight__attr is-block text-indent-1">}</span>
+                  <span class="code-syntax-hightlight__attr is-block text-indent-1">.cabecalho {</span>
+                    <span class="code-syntax-hightlight__tag-content is-block text-indent-2">background: lightgreen;</span>
+                    <span class="code-syntax-hightlight__tag-content is-block text-indent-2">color: red;</span>
+                  <span class="code-syntax-hightlight__attr is-block text-indent-1">}</span>
+                <span class="code-syntax-hightlight__tag is-block">&lt;/style&gt;</span>
+              </code>
+              <br />
+              Nesse caso, a regra aplicada será a segunda, pois os elementos possuem o mesmo nível de força de seleção, que é qualquer elemento header vs qualquer elemento com a classe .cabecalho, ou seja, nem a seleção pelo nome da tag nem a seleção pela classe estão aninhandadas (com outra tag ou classe precedendo ela).
+              <br />
+              <strong>Elemento selecionado com níveis diferentes de força por aninhamento</strong>
+              <br />
+              
+              <code class="code-syntax-hightlight is-block">
+                <span class="code-syntax-hightlight__tag is-block">&lt;style&gt;</span>
+                  <span class="code-syntax-hightlight__attr is-block text-indent-1">header {</span>
+                    <span class="code-syntax-hightlight__tag-content is-block text-indent-2">background: lightgreen;</span>
+                    <span class="code-syntax-hightlight__tag-content is-block text-indent-2">color: red;</span>
+                  <span class="code-syntax-hightlight__attr is-block text-indent-1">}</span>
+                  <span class="code-syntax-hightlight__attr is-block text-indent-1">main header {</span>
+                    <span class="code-syntax-hightlight__tag-content is-block text-indent-2">background: lightgreen;</span>
+                    <span class="code-syntax-hightlight__tag-content is-block text-indent-2">color: blue;</span>
+                  <span class="code-syntax-hightlight__attr is-block text-indent-1">}</span>
+                <span class="code-syntax-hightlight__tag is-block">&lt;/style&gt;</span>
+              </code>
+              <br />
+              <code class="code-syntax-hightlight is-block">
+                <span class="code-syntax-hightlight__tag is-block">&lt;style&gt;</span>
+                  <span class="code-syntax-hightlight__attr is-block text-indent-1">main header {</span>
+                    <span class="code-syntax-hightlight__tag-content is-block text-indent-2">background: lightgreen;</span>
+                    <span class="code-syntax-hightlight__tag-content is-block text-indent-2">color: blue;</span>
+                  <span class="code-syntax-hightlight__attr is-block text-indent-1">}</span>
+                  <span class="code-syntax-hightlight__attr is-block text-indent-1">header {</span>
+                    <span class="code-syntax-hightlight__tag-content is-block text-indent-2">background: lightgreen;</span>
+                    <span class="code-syntax-hightlight__tag-content is-block text-indent-2">color: red;</span>
+                  <span class="code-syntax-hightlight__attr is-block text-indent-1">}</span>
+                <span class="code-syntax-hightlight__tag is-block">&lt;/style&gt;</span>
+              </code>
+              No exemplo acima, em ambos os casos a cor renderizada seria vermelha, pois a força de seleção o elemento que está aninhado <code class="code-syntax-hightlight code-syntax-hightlight__tag-content">main header</code> é maior do que a força de seleção para o elemento solto <code class="code-syntax-hightlight code-syntax-hightlight__tag-content">header</code>.Essa mesma regra se aplica caso em vez do nome da tag seja utilizada uma classe, por exemplo.
+              <br />
+              Além do aninhamento, pode haver também a adição de um atributo, ou seja a seleção de um elemento pelo nome da classe ou por um atributo é mais fraca do que se a seleção juntar ambos, por exemplo, ao selecionar desta forma <code class="code-syntax-hightlight code-syntax-hightlight__tag-content">header.cabecalho</code> se tem uma seleção mais forte do que se a seleção for desta forma <code class="code-syntax-hightlight code-syntax-hightlight__tag-content">header</code> ou desta forma <code class="code-syntax-hightlight code-syntax-hightlight__tag-content">.cabecalho</code>.
+              <br>
+              Cabe ressaltar que não foi mencionado na aula, mas o atributo <code class="code-syntax-hightlight code-syntax-hightlight__tag-content">id</code>, quando comparado com a seleção pelo nome da tag ou por qualquer outro atributo, é mais forte, ou seja ao fazer a seleção desta forma <code class="code-syntax-hightlight code-syntax-hightlight__tag-content">#titulo-1</code>, é mais forte do que <code class="code-syntax-hightlight code-syntax-hightlight__tag-content">header</code> ou <code class="code-syntax-hightlight code-syntax-hightlight__tag-content">.cabecalho</code>.
+            </li>
+            <li>
+              <strong>Ordem da definição das propriedades</strong>
+              <br />
+              A sigla CSS significa Cascade Style Sheets, ou seja, folhas de estilo em cascata, o que significa que tudo que é incluído por último e que se refira à propriedade de um mesmo elemento selecionado, sobrescreverá o que foi definido antes, caso ambos os elemetos tenham o mesmo nível de força na seleção. 
+            </li>
+          </ol>
+        </section>
+      </article>
+  </main>
+</body>
+</html>
