@@ -8,17 +8,18 @@
     .is-block {
       display: block;
     }
-    .html-syntax-hightlight {
+    .code-syntax-hightlight {
+      max-width: 80ch;
       margin: 0;
       padding: 2px 5px;
       font-weight: 700;
       background: #444444;
       border-radius: 3px;
     }
-    .html-syntax-hightlight__tag {
+    .code-syntax-hightlight__tag {
       color: #d768b3;
     }
-    .html-syntax-hightlight__tag-content {
+    .code-syntax-hightlight__tag-content {
       color: #ffffff;
     }
     .text-indent-1 {
@@ -85,33 +86,33 @@
     <article>
       <p>
         Hoje aprendemos sobre as tags 
-        <code class='html-syntax-hightlight html-syntax-hightlight__tag'>&lt;header/&gt;</code>,
-        <code class='html-syntax-hightlight html-syntax-hightlight__tag'>&lt;img/&gt;</code> e 
-        <code class='html-syntax-hightlight html-syntax-hightlight__tag'>&lt;nav/&gt;</code>.
+        <code class="code-syntax-hightlight code-syntax-hightlight__tag">&lt;header/&gt;</code>,
+        <code class="code-syntax-hightlight code-syntax-hightlight__tag">&lt;img/&gt;</code> e 
+        <code class="code-syntax-hightlight code-syntax-hightlight__tag">&lt;nav/&gt;</code>.
       </p>
       <section>
         <h3>Header:</h3>
         <article>
           <p>
-            É responsável por agrupar todos os elementos que façam parte do cabeçalho do contexto onde está inserido, ou seja, se o header é um elemento diretamente filho da tag <code class='html-syntax-hightlight html-syntax-hightlight__tag'>&lt;body/&gt;</code> entendemos que esse é o cabeçalho da página, como foi o exemplo da aula. Mas há contextos em que podemos colocar a tag <code class='html-syntax-hightlight'>
-            <span class='html-syntax-hightlight__tag'>&lt;header/&gt;</span></code> para ser o cabeçalho do conteúdo. Como no exemplo abaixo:
+            É responsável por agrupar todos os elementos que façam parte do cabeçalho do contexto onde está inserido, ou seja, se o header é um elemento diretamente filho da tag <code class="code-syntax-hightlight code-syntax-hightlight__tag">&lt;body/&gt;</code> entendemos que esse é o cabeçalho da página, como foi o exemplo da aula. Mas há contextos em que podemos colocar a tag <code class="code-syntax-hightlight">
+            <span class="code-syntax-hightlight__tag">&lt;header/&gt;</span></code> para ser o cabeçalho do conteúdo. Como no exemplo abaixo:
     
             <br/><br/>
     
-            <code class='html-syntax-hightlight is-block'>
-              <span class='html-syntax-hightlight__tag is-block'>&lt;main&gt;</span>
-                <span class='html-syntax-hightlight__tag is-block text-indent-1'>&lt;header&gt;</span>
-                  <span class='html-syntax-hightlight__tag is-block text-indent-2'>
-                    &lt;h1&gt;<span class="html-syntax-hightlight__tag-content">Título do conteúdo</span><span class='html-syntax-hightlight__tag'>&lt;/h1&gt;</span>
+            <code class="code-syntax-hightlight is-block">
+              <span class="code-syntax-hightlight__tag is-block">&lt;main&gt;</span>
+                <span class="code-syntax-hightlight__tag is-block text-indent-1">&lt;header&gt;</span>
+                  <span class="code-syntax-hightlight__tag is-block text-indent-2">
+                    &lt;h1&gt;<span class="code-syntax-hightlight__tag-content">Título do conteúdo</span><span class="code-syntax-hightlight__tag">&lt;/h1&gt;</span>
                   </span>
-                  <span class='html-syntax-hightlight__tag is-block text-indent-2'>
-                    &lt;h2&gt;<span class="html-syntax-hightlight__tag-content">Subtítulo em formato de descrição resumida</span><span class='html-syntax-hightlight__tag'>&lt;h2/&gt;</span>
+                  <span class="code-syntax-hightlight__tag is-block text-indent-2">
+                    &lt;h2&gt;<span class="code-syntax-hightlight__tag-content">Subtítulo em formato de descrição resumida</span><span class="code-syntax-hightlight__tag">&lt;h2/&gt;</span>
                   </span>
-                <span class='html-syntax-hightlight__tag is-block text-indent-1'>&lt;/header&gt;</span>
-              <span class='html-syntax-hightlight__tag is-block'>&lt;/main&gt;</span>
+                <span class="code-syntax-hightlight__tag is-block text-indent-1">&lt;/header&gt;</span>
+              <span class="code-syntax-hightlight__tag is-block">&lt;/main&gt;</span>
             </code>
             <br/><br/>
-            Outro exemplo possível seria ter o breadcrumb dentro dessa estrtura no lugar da tag <code class='html-syntax-hightlight html-syntax-hightlight__tag'>&lt;h2/&gt;</code>.
+            Outro exemplo possível seria ter o breadcrumb dentro dessa estrtura no lugar da tag <code class="code-syntax-hightlight code-syntax-hightlight__tag">&lt;h2/&gt;</code>.
           </p>
         </article>
       </section>
@@ -123,18 +124,18 @@
 
             <br/><br/>
 
-            <code class='html-syntax-hightlight is-block'>
-              <span class='html-syntax-hightlight__tag is-block'>&lt;nav&gt;</span>
-                <span class='html-syntax-hightlight__tag is-block text-indent-1'>&lt;ul&gt;</span>
-                  <span class='html-syntax-hightlight__tag is-block text-indent-2'>&lt;li&gt;</span>
-                    <span class='html-syntax-hightlight__tag is-block text-indent-3'>
+            <code class="code-syntax-hightlight is-block">
+              <span class="code-syntax-hightlight__tag is-block">&lt;nav&gt;</span>
+                <span class="code-syntax-hightlight__tag is-block text-indent-1">&lt;ul&gt;</span>
+                  <span class="code-syntax-hightlight__tag is-block text-indent-2">&lt;li&gt;</span>
+                    <span class="code-syntax-hightlight__tag is-block text-indent-3">
                       &lt;a href="link"&gt;
-                      <span class="html-syntax-hightlight__tag-content">texto do link</span>
-                      <span  class='html-syntax-hightlight__tag'>&lt;/a&gt;</span>
+                      <span class="code-syntax-hightlight__tag-content">texto do link</span>
+                      <span  class="code-syntax-hightlight__tag">&lt;/a&gt;</span>
                     </span>
-                  <span  class='html-syntax-hightlight__tag is-block text-indent-2'>&lt;/li&gt;</span>
-                <span  class='html-syntax-hightlight__tag is-block text-indent-1'>&lt;/ul&gt;</span>
-              <span class='html-syntax-hightlight__tag is-block'>&lt;/nav&gt;</span>
+                  <span  class="code-syntax-hightlight__tag is-block text-indent-2">&lt;/li&gt;</span>
+                <span  class="code-syntax-hightlight__tag is-block text-indent-1">&lt;/ul&gt;</span>
+              <span class="code-syntax-hightlight__tag is-block">&lt;/nav&gt;</span>
             </code>
           </p>
         </article>
@@ -146,7 +147,7 @@
             É responsável por renderizar imagens no html através do endereço do arquivo no projeto que é passado pelo atributo <code><strong>src</strong></code>, que é o único atributo obrigatório para que a imagem seja exibida na página. Porém é sempre bom destacar a importância da semantica e da acessibilidade do seu código em HTML, por isso sempre procure incluir pelo menos o atributo <code><strong>alt</strong></code> e inclua uma descrição sucinta porém objetiva do conteúdo da imagem.
           </p>
           <p>Vale lembrar que a navegação no atributo <code><strong>src</strong></code> deve considerar a página em questão, usando a referência de dois pontos consecutivos (..) para voltar uma pasta nos diretórios do servidor e a barra (/) para entrar em um diretório.</p>
-          <p>Esse seria um exemplo de uso, considerando a estrutura deste projeto, para exibir em tela a foto do peril que está na pasta de assets disponível a partir da pasta raiz do projeto: <code class='html-syntax-hightlight html-syntax-hightlight__tag'>&lt;img src="../assets/foto-perfil.jpg" src="foto de uma mulher de cabelos pretos sorrindo"/&gt;</code></p>
+          <p>Esse seria um exemplo de uso, considerando a estrutura deste projeto, para exibir em tela a foto do peril que está na pasta de assets disponível a partir da pasta raiz do projeto: <code class="code-syntax-hightlight code-syntax-hightlight__tag">&lt;img src="../assets/foto-perfil.jpg" src="foto de uma mulher de cabelos pretos sorrindo"/&gt;</code></p>
         </article>
       </section>
     </article>
